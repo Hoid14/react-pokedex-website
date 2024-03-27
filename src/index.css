@@ -107,6 +107,7 @@ header form {
 /* Btn Filter */
 .container-filter {
 	display: flex;
+	justify-content: flex-end;
 }
 
 .icon-filter {
