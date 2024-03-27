@@ -72,14 +72,20 @@ export const PokemonProvider = ({ children }) => {
 
     useEffect(()=>{
         getAllPokemons()
-    },[])
+    },[offset])
 
     useEffect(()=>{
         getGlobalpokemons()
     },[])
 
+    //boton cargar mas
+    const onClickLoadMore = () =>{
+        setOffset(offset+50)
+    }
+
 
     return (
+    // con esto puedo usar todo esto en toda la aplicacion
         <PokemonContext.Provider 
         value={{
             valueSearch,
@@ -87,7 +93,17 @@ export const PokemonProvider = ({ children }) => {
             onResetForm,
             allPokemons,
             globalPokemons,
-            getPokemonByID
+            getPokemonByID,
+            onClickLoadMore,
+            //loader
+            loading,
+            setLoading,
+            //btn filter
+            active,
+            setActive,
+            //filtrar container checkbox
+            
+
         }}>
             {children}
         </PokemonContext.Provider>
